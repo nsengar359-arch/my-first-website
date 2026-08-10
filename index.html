@@ -344,14 +344,56 @@
                     <div class="price">
                         ₹499
                     </div>
+<label for="size1">Size:</label>
 
-                    <a
-                        class="order-btn"
-                        href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20Classic%20T-Shirt%20order%20karna%20hai.%20Price%3A%20₹499"
-                        target="_blank"
-                    >
-                        Order on WhatsApp
-                    </a>
+<select id="size1">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+</select>
+
+<br><br>
+
+<label for="qty1">Quantity:</label>
+
+<input
+    type="number"
+    id="qty1"
+    value="1"
+    min="1"
+    max="10"
+>
+                    <br><br>
+
+<input
+    type="text"
+    id="name1"
+    placeholder="Your Name"
+>
+
+<br><br>
+
+<textarea
+    id="address1"
+    placeholder="Your Address"
+    rows="3"
+></textarea>
+
+<br><br>
+                    <button
+    class="order-btn"
+    onclick="orderProduct(
+        'Classic T-Shirt',
+        499,
+        'size1',
+        'qty1',
+        'name1',
+        'address1'
+    )"
+>
+    Order on WhatsApp
+</button>
 
                 </div>
 
@@ -478,6 +520,42 @@
         </p>
 
     </footer>
+<script>
+function orderProduct(product, price, sizeId, qtyId, nameId, addressId) {
 
+    const size = document.getElementById(sizeId).value;
+    const quantity = document.getElementById(qtyId).value;
+    const name = document.getElementById(nameId).value;
+    const address = document.getElementById(addressId).value;
+
+    if (name.trim() === "") {
+        alert("Please enter your name.");
+        return;
+    }
+
+    if (address.trim() === "") {
+        alert("Please enter your address.");
+        return;
+    }
+
+    const total = price * quantity;
+
+    const message =
+        "Hello My Collection!%0A%0A" +
+        "I want to order:%0A" +
+        "Product: " + encodeURIComponent(product) + "%0A" +
+        "Price: ₹" + price + "%0A" +
+        "Size: " + encodeURIComponent(size) + "%0A" +
+        "Quantity: " + quantity + "%0A" +
+        "Total: ₹" + total + "%0A%0A" +
+        "Customer Name: " + encodeURIComponent(name) + "%0A" +
+        "Address: " + encodeURIComponent(address);
+
+    window.open(
+        "https://wa.me/919149013923?text=" + message,
+        "_blank"
+    );
+}
+</script>
 </body>
 </html>
