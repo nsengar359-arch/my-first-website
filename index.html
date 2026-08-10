@@ -487,14 +487,57 @@
                     <div class="price">
                         ₹799
                     </div>
+<label for="size3">Size:</label>
 
-                    <a
-                        class="order-btn"
-                        href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20Fashion%20Dress%20order%20karna%20hai.%20Price%3A%20₹799"
-                        target="_blank"
-                    >
-                        Order on WhatsApp
-                    </a>
+<select id="size3">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+</select>
+
+<br><br>
+
+<label for="qty3">Quantity:</label>
+
+<input
+    type="number"
+    id="qty3"
+    value="1"
+    min="1"
+    max="10"
+>
+
+<br><br>
+
+<input
+    type="text"
+    id="name3"
+    placeholder="Your Name"
+>
+
+<br><br>
+
+<textarea
+    id="address3"
+    placeholder="Your Address"
+    rows="3"
+></textarea>
+
+<br><br>
+                    <button
+    class="order-btn"
+    onclick="orderProduct(
+        'Fashion Dress',
+        799,
+        'size3',
+        'qty3',
+        'name3',
+        'address3'
+    )"
+>
+    Order on WhatsApp
+</button>
 
                 </div>
 
