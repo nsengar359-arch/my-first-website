@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,15 +19,14 @@
         }
 
         body {
-            background: #ffffff;
-            color: #111111;
+            background: #fff;
+            color: #111;
         }
 
         /* NAVBAR */
-
         header {
-            background: #000000;
-            color: white;
+            background: #000;
+            color: #fff;
             padding: 18px 7%;
             display: flex;
             justify-content: space-between;
@@ -47,23 +45,20 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
+            margin-left: 22px;
             font-size: 15px;
         }
 
         nav a:hover {
-            color: #cccccc;
+            color: #ccc;
         }
 
         /* HERO */
-
         .hero {
             min-height: 85vh;
-            background: linear-gradient(
-                rgba(0,0,0,0.65),
-                rgba(0,0,0,0.65)
-            ),
-            url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1600&q=80");
+            background:
+                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+                url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1600&q=80");
 
             background-size: cover;
             background-position: center;
@@ -71,18 +66,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
             text-align: center;
+
             color: white;
             padding: 30px;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-size: 60px;
             margin-bottom: 15px;
         }
 
-        .hero-content p {
+        .hero p {
             font-size: 21px;
             margin-bottom: 30px;
         }
@@ -97,12 +92,7 @@
             border-radius: 4px;
         }
 
-        .btn:hover {
-            background: #dddddd;
-        }
-
-        /* COMMON SECTION */
-
+        /* SECTIONS */
         section {
             padding: 70px 7%;
             text-align: center;
@@ -113,13 +103,12 @@
             margin-bottom: 15px;
         }
 
-        .section-description {
-            color: #666666;
+        .description {
+            color: #666;
             margin-bottom: 40px;
         }
 
         /* CATEGORIES */
-
         .categories {
             display: flex;
             justify-content: center;
@@ -130,13 +119,8 @@
         .category {
             width: 280px;
             padding: 40px 20px;
-            background: #f3f3f3;
+            background: #f2f2f2;
             border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .category:hover {
-            transform: translateY(-5px);
         }
 
         .category h3 {
@@ -145,7 +129,6 @@
         }
 
         /* PRODUCTS */
-
         .products-section {
             background: #f7f7f7;
         }
@@ -162,7 +145,7 @@
             width: 270px;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,.12);
         }
 
         .product img {
@@ -187,21 +170,21 @@
 
         .order-btn {
             display: inline-block;
-            background: #000000;
+            background: #000;
             color: white;
-            padding: 10px 20px;
+            padding: 11px 22px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-weight: bold;
         }
 
         .order-btn:hover {
-            background: #333333;
+            background: #333;
         }
 
         /* OFFER */
-
         .offer {
-            background: #000000;
+            background: #000;
             color: white;
         }
 
@@ -215,37 +198,33 @@
         }
 
         /* ABOUT */
-
         .about p {
             max-width: 750px;
             margin: auto;
-            color: #555555;
+            color: #555;
             font-size: 18px;
             line-height: 1.8;
         }
 
         /* CONTACT */
-
         .contact {
             background: #f3f3f3;
         }
 
-        .contact-info p {
-            margin: 10px;
+        .contact p {
+            margin: 12px;
             font-size: 18px;
         }
 
         /* FOOTER */
-
         footer {
-            background: #000000;
+            background: #000;
             color: white;
             text-align: center;
             padding: 25px;
         }
 
         /* MOBILE */
-
         @media (max-width: 700px) {
 
             header {
@@ -254,20 +233,16 @@
             }
 
             nav a {
-                margin: 0 7px;
+                margin: 0 6px;
                 font-size: 13px;
             }
 
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 40px;
             }
 
-            .hero-content p {
+            .hero p {
                 font-size: 17px;
-            }
-
-            section {
-                padding: 55px 5%;
             }
         }
     </style>
@@ -276,7 +251,6 @@
 <body>
 
     <!-- NAVBAR -->
-
     <header>
 
         <div class="logo">
@@ -295,11 +269,9 @@
 
 
     <!-- HERO -->
-
     <section class="hero" id="home">
 
-        <div class="hero-content">
-
+        <div>
             <h1>MY COLLECTION</h1>
 
             <p>
@@ -309,19 +281,17 @@
             <a href="#products" class="btn">
                 SHOP NOW
             </a>
-
         </div>
 
     </section>
 
 
     <!-- CATEGORIES -->
-
     <section id="categories">
 
         <h2>Shop By Category</h2>
 
-        <p class="section-description">
+        <p class="description">
             Explore our latest fashion collections.
         </p>
 
@@ -348,23 +318,23 @@
 
 
     <!-- PRODUCTS -->
-
     <section class="products-section" id="products">
 
         <h2>Featured Products</h2>
 
-        <p class="section-description">
+        <p class="description">
             Check out our latest collection.
         </p>
 
         <div class="products">
 
 
+            <!-- PRODUCT 1 -->
             <div class="product">
 
                 <img
                     src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
-                    alt="T-Shirt"
+                    alt="Classic T-Shirt"
                 >
 
                 <div class="product-info">
@@ -375,18 +345,25 @@
                         ₹499
                     </div>
 
-                   href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20Classic%20T-Shirt%20order%20karna%20hai.%20Price%3A%20499"
+                    <a
+                        class="order-btn"
+                        href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20Classic%20T-Shirt%20order%20karna%20hai.%20Price%3A%20₹499"
+                        target="_blank"
+                    >
+                        Order on WhatsApp
+                    </a>
 
                 </div>
 
             </div>
 
 
+            <!-- PRODUCT 2 -->
             <div class="product">
 
                 <img
                     src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80"
-                    alt="Jeans"
+                    alt="Classic Jeans"
                 >
 
                 <div class="product-info">
@@ -396,13 +373,21 @@
                     <div class="price">
                         ₹999
                     </div>
-                  href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20Classic%20Jeans%20order%20karna%20hai.%20Price%3A%20999"
+
+                    <a
+                        class="order-btn"
+                        href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20Classic%20Jeans%20order%20karna%20hai.%20Price%3A%20₹999"
+                        target="_blank"
+                    >
+                        Order on WhatsApp
+                    </a>
 
                 </div>
 
             </div>
 
 
+            <!-- PRODUCT 3 -->
             <div class="product">
 
                 <img
@@ -417,13 +402,18 @@
                     <div class="price">
                         ₹799
                     </div>
-                   
-                   href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20Fashion%20Dress%20order%20karna%20hai.%20Price%3A%20799"
+
+                    <a
+                        class="order-btn"
+                        href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20Fashion%20Dress%20order%20karna%20hai.%20Price%3A%20₹799"
+                        target="_blank"
+                    >
+                        Order on WhatsApp
+                    </a>
 
                 </div>
 
             </div>
-
 
         </div>
 
@@ -431,7 +421,6 @@
 
 
     <!-- OFFER -->
-
     <section class="offer" id="offers">
 
         <h2>Special Offer</h2>
@@ -448,42 +437,40 @@
 
 
     <!-- ABOUT -->
-
     <section class="about">
 
         <h2>About My Collection</h2>
 
         <p>
             My Collection is an online fashion store focused on
-            bringing stylish, comfortable and affordable clothing
-            to our customers. We are based in Sasni, Hathras,
-            Uttar Pradesh.
+            stylish, comfortable and affordable clothing.
+            We are based in Sasni, Hathras, Uttar Pradesh.
         </p>
 
     </section>
 
 
     <!-- CONTACT -->
-
     <section class="contact" id="contact">
 
         <h2>Contact Us</h2>
 
-        <div class="contact-info">
+        <p>📍 Sasni, Hathras, Uttar Pradesh - 202139</p>
 
-            <p>📍 Sasni, Hathras, Uttar Pradesh - 202139</p>
-
-            <p>📞 WhatsApp: Coming Soon</p>
-
-            <p>📧 Email: Coming Soon</p>
-
-        </div>
+        <p>
+            📱 WhatsApp:
+            <a
+                href="https://wa.me/919149013923"
+                target="_blank"
+            >
+                Chat With Us
+            </a>
+        </p>
 
     </section>
 
 
     <!-- FOOTER -->
-
     <footer>
 
         <p>
@@ -494,4 +481,3 @@
 
 </body>
 </html>
-```
