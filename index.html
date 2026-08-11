@@ -205,7 +205,25 @@
             font-size: 18px;
             line-height: 1.8;
         }
+<!-- CART -->
+<section id="cart" class="cart-section">
 
+    <h2>🛒 Your Cart</h2>
+
+    <div id="cart-items">
+        <p>Your cart is empty.</p>
+    </div>
+
+    <h3 id="cart-total">Total: ₹0</h3>
+
+    <button
+        class="order-btn"
+        onclick="checkoutCart()"
+    >
+        Order Cart on WhatsApp
+    </button>
+
+</section>
         /* CONTACT */
         .contact {
             background: #f3f3f3;
@@ -264,7 +282,7 @@
             <a href="#offers">Offers</a>
             <a href="#contact">Contact</a>
         </nav>
-
+<a href="#cart">🛒 Cart (<span id="cart-count">0</span>)</a>
     </header>
 
 
@@ -379,8 +397,20 @@
     placeholder="Your Address"
     rows="3"
 ></textarea>
-
 <br><br>
+  <button
+    class="order-btn"
+    onclick="addToCart(
+        'Classic T-Shirt',
+        499,
+        'size1',
+        'qty1'
+    )"
+>
+    🛒 Add to Cart
+</button>
+
+<br><br>                  
                     <button
     class="order-btn"
     onclick="orderProduct(
@@ -642,6 +672,194 @@ function orderProduct(product, price, sizeId, qtyId, nameId, addressId) {
         "_blank"
     );
 }
+</script>
+    <script>
+
+let cart = [];
+
+
+function addToCart(product, price, sizeId, qtyId) {
+
+    const size = document.getElementById(sizeId).value;
+    const quantity = parseInt(document.getElementById(qtyId).value);
+
+    const existingProduct = cart.find(
+        item => item.product === product && item.size === size
+    );
+
+    if (existingProduct) {
+
+        existingProduct.quantity += quantity;
+
+    } else {
+
+        cart.push({
+            product: product,
+            price: price,
+            size: size,
+            quantity: quantity
+        });
+
+    }
+
+    updateCart();
+
+    alert(product + " added to cart!");
+}
+
+
+function updateCart() {
+
+    const cartItems = document.getElementById("cart-items");
+    const cartCount = document.getElementById("cart-count");
+    const cartTotal = document.getElementById("cart-total");
+
+    cartItems.innerHTML = "";
+
+    let total = 0;
+    let itemCount = 0;
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+
+    } else {
+
+        cart.forEach((item, index) => {
+
+            const itemTotal = item.price * item.quantity;
+
+            total += itemTotal;
+            itemCount += item.quantity;
+
+
+            const div = document.createElement("div");
+
+            div.innerHTML = `
+                <div style="
+                    background:#f5f5f5;
+                    padding:15px;
+                    margin:10px 0;
+                    border-radius:8px;
+                ">
+
+                    <strong>${item.product}</strong>
+
+                    <br>
+
+                    Size: ${item.size}
+
+                    <br>
+
+                    Quantity: ${item.quantity}
+
+                    <br>
+
+                    Price: ₹${item.price}
+
+                    <br>
+
+                    Total: ₹${itemTotal}
+
+                    <br><br>
+
+                    <button
+                        onclick="removeFromCart(${index})"
+                        style="
+                            background:#000;
+                            color:white;
+                            border:none;
+                            padding:8px 15px;
+                            border-radius:4px;
+                            cursor:pointer;
+                        "
+                    >
+                        Remove
+                    </button>
+
+                </div>
+            `;
+
+            cartItems.appendChild(div);
+
+        });
+
+    }
+
+
+    cartCount.innerText = itemCount;
+
+    cartTotal.innerText = "Total: ₹" + total;
+}
+
+
+function removeFromCart(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+}
+
+
+function checkoutCart() {
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty!");
+
+        return;
+    }
+
+
+    let message =
+        "Hello My Collection!%0A%0A" +
+        "I want to place an order:%0A%0A";
+
+
+    let total = 0;
+
+
+    cart.forEach((item, index) => {
+
+        const itemTotal = item.price * item.quantity;
+
+        total += itemTotal;
+
+
+        message +=
+            (index + 1) + ". " +
+            item.product +
+            "%0A" +
+            "Size: " +
+            item.size +
+            "%0A" +
+            "Quantity: " +
+            item.quantity +
+            "%0A" +
+            "Price: ₹" +
+            item.price +
+            "%0A" +
+            "Item Total: ₹" +
+            itemTotal +
+            "%0A%0A";
+
+    });
+
+
+    message +=
+        "Total Order Amount: ₹" +
+        total;
+
+
+    window.open(
+        "https://wa.me/919149013923?text=" + message,
+        "_blank"
+    );
+
+}
+
 </script>
 </body>
 </html>
