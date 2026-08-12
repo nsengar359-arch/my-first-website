@@ -1068,25 +1068,23 @@ function filterCategory(category) {
     });
 
 }
-
-
 function filterProducts() {
 
     const search = document
         .getElementById("product-search")
         .value
-        .toLowerCase();
+        .toLowerCase()
+        .trim();
 
     const products = document.querySelectorAll(".product");
 
     products.forEach(product => {
 
-        const name = product
-            .querySelector("h3")
-            .innerText
+        const productText = product
+            .textContent
             .toLowerCase();
 
-        if (name.includes(search)) {
+        if (productText.includes(search)) {
             product.style.display = "";
         } else {
             product.style.display = "none";
@@ -1095,6 +1093,8 @@ function filterProducts() {
     });
 
 }
+
+
 </script>
 </body>
 </html>
