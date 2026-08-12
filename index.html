@@ -343,12 +343,43 @@
         <p class="description">
             Check out our latest collection.
         </p>
+<!-- SEARCH & CATEGORIES -->
 
+<div class="shop-controls">
+
+    <input
+        type="text"
+        id="product-search"
+        placeholder="🔍 Search products..."
+        onkeyup="filterProducts()"
+    >
+
+    <div class="category-buttons">
+
+        <button onclick="filterCategory('all')">
+            All
+        </button>
+
+        <button onclick="filterCategory('men')">
+            👕 Men
+        </button>
+
+        <button onclick="filterCategory('women')">
+            👗 Women
+        </button>
+
+        <button onclick="filterCategory('kids')">
+            🧒 Kids
+        </button>
+
+    </div>
+
+</div>
         <div class="products">
 
 
             <!-- PRODUCT 1 -->
-            <div class="product">
+            <div class="product" data-category="men">
 
                 <img
                     src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
@@ -431,7 +462,7 @@
 
 
             <!-- PRODUCT 2 -->
-            <div class="product">
+            <div class="product" data-category="men">
 
                 <img
                     src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80"
@@ -516,7 +547,7 @@
 
 
             <!-- PRODUCT 3 -->
-            <div class="product">
+            <div class="product" data-category="women">
 
                 <img
                     src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80"
@@ -1019,7 +1050,51 @@ function checkoutCart() {
     );
 
 }
+function filterCategory(category) {
 
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        if (
+            category === "all" ||
+            product.dataset.category === category
+        ) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+
+}
+
+
+function filterProducts() {
+
+    const search = document
+        .getElementById("product-search")
+        .value
+        .toLowerCase();
+
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        const name = product
+            .querySelector("h3")
+            .innerText
+            .toLowerCase();
+
+        if (name.includes(search)) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+
+}
 </script>
 </body>
 </html>
