@@ -486,6 +486,41 @@
         padding: 15px;
     }
 }
+        /* ===== WHATSAPP CONTACT BUTTON ===== */
+
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+
+    background: #25D366;
+    color: white;
+
+    padding: 13px 18px;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+        padding: 11px 15px;
+        font-size: 13px;
+    }
+}
     </style>
 </head>
 
@@ -1364,5 +1399,12 @@ function filterProducts() {
 
 
 </script>
+    <a
+    href="https://wa.me/919149013923?text=Hello%20My%20Collection%2C%20mujhe%20products%20ke%20baare%20me%20jaankari%20chahiye."
+    class="whatsapp-float"
+    target="_blank"
+>
+    💬 Chat on WhatsApp
+</a>
 </body>
 </html>
