@@ -453,6 +453,39 @@
     border-radius: 3px;
     margin-bottom: 10px;
 }
+        .store-policies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.policy-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.policy-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.policy-box p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .store-policies {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}
     </style>
 </head>
 
@@ -964,7 +997,33 @@
         <p>
             © 2026 My Collection. All Rights Reserved.
         </p>
+<div class="store-policies">
 
+    <div class="policy-box">
+        <h3>🚚 Delivery</h3>
+        <p>
+            Delivery time product aur location ke according vary kar sakta hai.
+            Order confirm hone ke baad expected delivery details WhatsApp par share ki jayengi.
+        </p>
+    </div>
+
+    <div class="policy-box">
+        <h3>🔄 Return & Exchange</h3>
+        <p>
+            Return aur exchange product ki condition aur supplier policy ke
+            according available hoga. Order se pehle details confirm kar sakte hain.
+        </p>
+    </div>
+
+    <div class="policy-box">
+        <h3>📞 Customer Support</h3>
+        <p>
+            Order ya product se related kisi bhi query ke liye WhatsApp par
+            humse contact karein.
+        </p>
+    </div>
+
+</div>
     </footer>
 <script>
 function orderProduct(product, price, sizeId, qtyId, nameId, addressId) {
